@@ -6,3 +6,17 @@
 // tion for each data member. Provide a member function displayDate that displays the month, day
 // and year separated by forward slashes (/). Write a test program that demonstrates class Date’s capa-
 // bilities.
+#include "Date.h"
+
+using namespace std;
+
+int main(){
+    Date date1(1, 2, 2020);
+    date1.displayDate();
+
+    Date date2(13, 13, 1300);
+    date2.displayDate();
+}
+
+
+
