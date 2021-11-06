@@ -26,3 +26,43 @@
 // 2       4.0         2.50
 // 3       24.0        10.00
 // TOTAL   29.5        14.50
+#include <iostream>
+#include <iomanip>
+
+#include "Car.h"
+using namespace std;
+
+int main(){
+    
+    Car car1(1, 1.5);
+    Car car2(2, 4.0);
+    Car car3(3, 24.0);
+
+    Car cars[3] = {car1, car2, car3};
+
+
+    cout << setw(5) << "Car" 
+        << setw(10) << "Hours"
+        << setw(10) << "Charge" 
+        << endl;
+
+    double totalHours{};
+    double totalCharge{};
+
+    for(Car car: cars){
+        cout << setw(5) 
+            << std::fixed
+            << std::setprecision(1)
+            << car.getCarNumber() 
+            << setw(10) << car.getParkingTime()
+            << setw(10) << car.getParkingCharge() 
+            << endl;
+        totalHours += car.getParkingTime();
+        totalCharge += car.getParkingCharge();
+    } 
+
+    cout << setw(5) << "TOTAL" 
+        << setw(10) << totalHours
+        << setw(10) << totalCharge
+        << endl;  
+}
