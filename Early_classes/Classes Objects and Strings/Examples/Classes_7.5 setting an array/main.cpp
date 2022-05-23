@@ -5,19 +5,20 @@
 using namespace std;
 
 int main(){
+    // constant variable cam be used to specify array size
+    const size_t arraySize = 5;     // must initialize in declaration
+    array< int, arraySize > s;      // array s has 5 elements
 
-    // constant variable can  be used to specify array size 
-    const size_t arraySize {5}; // must initialize in declaration
-    array<int, arraySize> s; // array s has 5 elements
-
-    for(size_t i = 0; i < s.size();++i){
-        s[i] = 2 + 2 * i;
+    for(size_t i = 0; i < s.size(); i++) // set the values
+    {
+        s[ i ]  = 2 + 2 * i; 
     }
 
-    cout << "Element" << setw(13) << "Value" << endl;
+    cout << "Element" << setw( 13 ) << "Value" << endl;
 
     // output contents of array s in tabular format
-    for(size_t j = 0; j < s.size();++j){
+    for(size_t j = 0; j < s.size(); j++)  
+    {
         cout << setw(7) << j << setw(13) << s[j] << endl;
-    }
+    }  
 }
